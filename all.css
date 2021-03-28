@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mapandbutton{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
+	
+	margin-top: 0;
+	max-resolution: 0;
+}
