@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="all.css" rel="stylesheet">
+<title>Untitled Document</title>
+	<style>
+		section {
+			position: relative;
+		}
+		article {
+			position: absolute;
+			background: white;
+			border: 3px solid black;
+		}
+		span {
+			background: #0AF500;
+			display: block;
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			position: absolute;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="mapandbutton"> <!-- Тут начинается часть, отвечающая за колонку карты и опций -->
+		<section>
+	<img src="5c9761fbecbdd169af56c042.png" alt="">
+		</section>
+<section>
+  <img src="original.jpg" alt="" usemap="#Navigation">
+	<map name="Navigation">
+		<area shape="poly" coords="579,667,610,707,718,624,690,585" href="#" alt="Информация" id="z" data-left="690" data-bottom="885">
+		<area shape="poly" coords="887,962,919,982,1025,893,942,873" href="#" alt="Информация" id="k" data-left="942" data-bottom="597">
+	</map>
+	<article data-name="z" hidden>
+	  <h1>Зимний Дворей</h1>
+		<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+		<h1> Mauris interdum, est vitae imperdiet blandit, tortor.</h1>
+	</article>
+	<article data-name="k" hidden>
+	  <h1>Зимний Дворец</h1>
+	</article>
+</section>
+	</div>
+	<script>
+		let section = document.getElementsByTagName("section")[1];
+		let articles = document.getElementsByTagName("article");
+		let areas = document.getElementsByTagName("area");
+		
+		section.onclick = function (event) {
+			let element = event.target;
+			
+			let selector = "[data-name='" + element.id + "']";
+			let art = document.querySelector(selector);
+			
+			if(element.tagName == "ARTICLE"|| element.parentNode.tagName == "ARTICLE"){
+				return;
+			}
+			
+			for (let i = 0; i < articles.length; i++) {
+				articles[i].hidden = true;
+			}
+			
+			if (element.tagName == "AREA") {
+				art.hidden = false;
+				art.style.left = element.getAttribute("data-left") + "px";
+				art.style.bottom = element.getAttribute("data-bottom") + "px";
+			}
+
+		};
+
+		let section1 = document.getElementsByTagName("section")[0];
+		
+		let spans = [];
+			
+		for (let i = 0; i < areas.length; i++) {
+			spans[i] = document.createElement("span");
+			spans[i].setAttribute("data-area", areas[i].id);
+		}
+		
+		section1.onclick = function (event) {
+			let elem = event.target;
+			
+			for (let i = 0; i < areas.length; i++) {
+				section.appendChild(spans[i]);
+				
+				let coord = areas[i].getAttribute("coords");
+				let coordAll = coord.split(",");
+				let coordX = [], coordY = [], xAll = 0, yAll = 0, numX, numY,size;
+				
+				for (let j = 0; j < coordAll.length; j++) {
+					if (j % 2 == 0) {
+						coordX.push(coordAll[j]);
+						xAll = xAll + (+coordAll[j]);
+					} else {
+						coordY.push(coordAll[j]);
+						yAll = yAll + (+coordAll[j]);
+					}
+					
+				}
+				
+				numX=xAll/coordX.length;
+				numY=yAll/coordY.length;
+				//size=(xAll+yAll)/(coordX.length + coordY.length);
+				
+				alert(numX + " "+numY);
+				
+				let syleSpan = getComputedStyle(spans[i]);
+				let width = parseInt(syleSpan.width);
+				let height = parseInt(syleSpan.height);
+				
+				spans[i].style.left = numX - width/2 + "px";
+				spans[i].style.top = numY - height/2 + "px";
+				
+				//spans[i].style.borderRadius=
+				
+				//spans[i].style.left = areas[i].getAttribute("data-left") - 25 + "px";
+				//spans[i].style.bottom = areas[i].getAttribute("data-bottom") - 25 + "px";
+			}
+			
+		}
+	</script>
+</body>
+</html>
