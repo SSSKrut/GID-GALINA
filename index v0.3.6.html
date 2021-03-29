@@ -70,33 +70,14 @@
 		let articles = document.getElementsByTagName("article");
 		let spans = [];
 		let areas = document.getElementsByTagName('area');
+		
+		window.onload = function(){
 		for (let i = 0; i < areas.length; i++) {
 			spans[i] = document.createElement("span");
 			spans[i].setAttribute("data-area", areas[i].id);
 		};
-		alert(spans.length);
 		
-		section.onclick = function (event) {
-			let element = event.target;
-			
-			let selector = "[data-name='" + element.id + "']";
-			let art = document.querySelector(selector);
-			
-			if(element.tagName == "ARTICLE" || element.parentNode.tagName == "ARTICLE"){
-				return;
-			}
-			
-			for (let i = 0; i < articles.length; i++) {
-				articles[i].hidden = true;
-			}
-			
-			if (element.tagName == "AREA") {
-				art.hidden = false;
-				art.style.left = element.getAttribute("data-left");
-				art.style.bottom = element.getAttribute("data-bottom");
-			}
-			
-			for (let i = 0; i < areas.length; i++) {
+		for (let i = 0; i < areas.length; i++) {
 				section.appendChild(spans[i]);
 				
 				let coord = areas[i].getAttribute("coords");
@@ -124,12 +105,35 @@
 				
 				spans[i].style.left = numX - width/2 + "px";
 				spans[i].style.top = numY - height/2 + "px";
+			}
+		}
+		//alert(spans.length);
+		section.onclick = function (event) {
+			let element = event.target;
+			
+			let selector = "[data-name='" + element.id + "']";
+			let art = document.querySelector(selector);
+			
+			if(element.tagName == "ARTICLE" || element.parentNode.tagName == "ARTICLE"){
+				return;
+			}
+			
+			for (let i = 0; i < articles.length; i++) {
+				articles[i].hidden = true;
+			}
+			
+			if (element.tagName == "AREA") {
+				art.hidden = false;
+				art.style.left = element.getAttribute("data-left");
+				art.style.bottom = element.getAttribute("data-bottom");
+			}
+			
+			
 				
 				//spans[i].style.borderRadius=
 				
 				//spans[i].style.left = areas[i].getAttribute("data-left") - 25 + "px";
 				//spans[i].style.bottom = areas[i].getAttribute("data-bottom") - 25 + "px";
-			}
 			
 		}
 	</script>
