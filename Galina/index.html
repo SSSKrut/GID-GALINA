@@ -42,6 +42,21 @@
                 text-align: left;
                 box-shadow:none;
             }
+/*навигация, изменения для стартовой странички*/
+header nav {   
+    margin-top: 53px;	
+	position:fixed;	
+	top:21px; right:150px;
+	z-index:10;
+}
+header nav>ul>li>ul {
+	background-color:rgba(207, 238, 247,0.9);
+	float:right;	
+	margin-top:21px;
+	padding:10px;
+}
+/*конец стилей для навигации*/
+
         </style>
 </head>
 <body>
@@ -49,6 +64,26 @@
             <section>
                 <img src="css/logo-05.png" alt="logo-01">
             <h1>Guide Galina</h1>
+<!--навигация сайта-->
+	<nav>
+		<ul>
+		
+		<li>
+			<a href="#" title="меню"><img src="images/nav-menu.png" alt=""></a>
+			<ul>
+				<li><a href="pages/zd.html">Зимний дворец</a></li>
+				<li><a href="pages/us.html">Усадьба Демидова</a></li>
+				<li><a href="pages/strelka.html">Стрелка Васильевского острова</a></li>
+				<li><a href="pages/mihsad.html">Михайловский сад</a></li>
+				<li><a href="pages/mar.html">Мариинский Дворец</a></li>
+				<li><a href="pages/let.html">Летний сад</a></li>
+				<li><a href="pages/gosd.html">Гостиный двор</a></li>
+				<li><a href="pages/domp.html">Дом Пиковой Дамы</a></li>
+				<li><a href="pages/dom.html">Дом из русской сказки</a></li>			
+			</ul>
+		</li>
+		</ul>                
+	</nav>
         </section>
 </header>
 
@@ -67,39 +102,39 @@
       </map>
       <article data-name="1" hidden>
         <h1>Зимний Дворец</h1>
-		  <a class="Readnext" href="pages/zd.html">Читать далее...</a>
+        <a class="Readnext" href="pages/zd.html">Читать далее...</a>
     </article>
       <article data-name="2" hidden>
-        <h1>Гостиный двор</h1>
-		  <a class="Readnext" href="pages/gosd.html">Читать далее...</a>
+        <h1>Гостинный двор</h1>
+        <a class="Readnext" href="pages/gosd.html">Читать далее...</a>
       </article>
     <article data-name="3" hidden>
         <h1>Летний сад</h1>
-		<a class="Readnext" href="pages/let.html">Читать далее...</a>
+        <a class="Readnext" href="pages/let.html">Читать далее...</a>
     </article>
     <article data-name="4" hidden>
         <h1>Михайловский сад</h1>
-		<a class="Readnext" href="pages/mihsad.html">Читать далее...</a>
+        <a class="Readnext" href="pages/mihsad.html">Читать далее...</a>
     </article>
     <article data-name="5" hidden>
         <h1>Стрелка Васильевского острова</h1>
-		<a class="Readnext" href="pages/strelka.html">Читать далее...</a>
+        <a class="Readnext" href="pages/strelka.html">Читать далее...</a>
     </article>
     <article data-name="6" hidden>
         <h1>Мариинский дворец</h1>
-		<a class="Readnext" href="pages/mar.html">Читать далее...</a>
+        <a class="Readnext" href="pages/mar.html">Читать далее...</a>
     </article>
     <article data-name="7" hidden>
         <h1>Усадьба Демидова</h1>
-		<a class="Readnext" href="pages/us.html">Читать далее...</a>
+        <a class="Readnext" href="pages/us.html">Читать далее...</a>
     </article>
     <article data-name="8" hidden>
         <h1>Дом пиковой Дамы</h1>
-		<a class="Readnext" href="pages/domp.html">Читать далее...</a>
+        <a class="Readnext" href="pages/domp.html">Читать далее...</a>
     </article>
     <article data-name="9" hidden>
         <h1>Дом из русской сказки</h1>
-		<a class="Readnext" href="pages/dom.html">Читать далее...</a>
+        <a class="Readnext" href="pages/dom.html">Читать далее...</a>
     </article>
   </div>
       <script>

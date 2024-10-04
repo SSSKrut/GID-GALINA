@@ -1,4 +1,4 @@
-@font-face{
+﻿@font-face{
     font-family: Marvin;
     src: url(font/Marvin.ttf);
     /*font-family: tekkok;
@@ -9,7 +9,7 @@ body{
     background:url(images/fon-2.jpg);
     font-size: 1em;
     margin: 0;
-    font-family:;
+    /*font-family:;*/
     
 }
 section {
@@ -18,6 +18,8 @@ section {
     margin: 0 auto;
     max-width: 920px;
     overflow: hidden;
+	min-width:850px; /*ограничение ширины, чтоб меню не падало*/
+   
 
 }
 body>section{
@@ -28,12 +30,16 @@ h2{
     font-family: Marvin;
     color: #0397C1;
     letter-spacing: 0.2em;
+	margin-top:46px;/*отступ, чтоб меню красиво наложилось*/
+	text-shadow: 0.03em 0.03em 0em #001D26;/*добавила*/
+	font-size:2em;/*добавила*/
 }
 header {
-      border-bottom: 8px #FF9F00	 solid;
+      	border-bottom: 8px #FF9F00	 solid;
        background-color: #057D9F;
        box-shadow: 1px 1px 1em #001419;
        padding-top: 20px;
+		height:110px;/*добавила*/
        
         
 }
@@ -47,14 +53,69 @@ header h1 {
        padding-left: 20px;
        text-shadow: 1px 1px 0.05em #FFEFD3;
     margin-bottom: 10px;
-}
-header h1, main h1 {
-    font-family: Marvin;
+	 font-family: Marvin;
     letter-spacing: 0.5em;
-    font-size: ;
+    
     color: #001419;
+}
+/*навигация*/
+header nav {
+    float: right;
+    margin-top: 53px;	
+	position:relative;	
+}
+header nav ul {
+	margin:0; padding:0;
+	list-style:none;
+	
+}
+header nav>ul>li {
+	float:left;
+  	margin-left: 10px;	
+}
+header nav>ul>li:first-child {
+	height:35px;
+	width:40px;
+	overflow:hidden;	
+transition:0.3s;
+position:relative;
 
 }
+header nav>ul>li:first-child:hover {
+	height:427px;
+	width:215px;
+transition:height 1s;
+}
+header nav img {
+	float:right;
+	margin-right:5px;	
+}
+header nav>ul>li>ul {
+	background-color:rgba(207, 238, 247,0.7);
+	float:right;	
+	margin-top:22px;
+	padding:10px;
+}
+header nav>ul>li>ul>li {
+	margin:0px 0 10px 0;
+	padding-bottom:10px;
+	border-bottom:1px #0087AE solid;	
+}
+header nav>ul>li>ul>li:last-child {
+	border-bottom:none;
+}
+header nav a{
+	font-family: sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	color:#001D26;  
+}
+header nav>ul>li>ul>li:hover a, header nav>ul>li>ul>li.activ a{	
+	color:#057D9F;
+	text-shadow: 0.01em 0.01em 0em #001D26;
+}
+/*конец стилей для навигации*/
+
 main{
     font-family: sans-serif;
     background-color: rgba(255, 255, 255, 0.5);
