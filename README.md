@@ -22,6 +22,16 @@ Thank you guys, for the school years;)
 
 - Learn how to make a backend.
 
+### Start this project
+
+You need to compile the `main.cpp`, you also need sfml:
+
+- ```sudo pacman -S sfml``` for arch linux
+- ```g++ -o main src/main.cpp -lsfml-network -lsfml-system```
+- exec ```./main``` from `~/GID-GALINA/`, remember that the backend server only reads and sends files from this folder, otherwise you need to change prefix name of the home-folder of `index.html` in `main.cpp` from "Galina" to "your-folder-name" and then recompile.
+
+The default port for the server is 7860.
+
 #### Note
 
 The technical implementation contains a lot of problems in all places and I'm fully aware of that. However, as a school project it still seems to me to be a good achievement. 
